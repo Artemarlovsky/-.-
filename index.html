@@ -2,18 +2,89 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>ЛесГЛОНАСС</title>
+  <title>ЛесГЛОНАСС — мониторинг манипуляторов</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial, sans-serif; padding: 40px; background: #f5f5f5; }
-    .box { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; }
-    h1 { color: #2a4d14; }
+    body { margin:0; font-family:Arial, sans-serif; background:#f5f5f5; color:#222; }
+    header { background:#1f3b1f; padding:20px; color:white; text-align:center; }
+    header h1 { margin:0; font-size:28px; }
+    .section { max-width:900px; margin:40px auto; background:white; padding:30px; border-radius:10px; }
+    h2 { color:#1f3b1f; margin-top:0; }
+    .features { display:flex; flex-wrap:wrap; gap:20px; }
+    .feature { flex:1; min-width:250px; background:#eef2ee; padding:20px; border-radius:8px; }
+    .cta { text-align:center; margin-top:30px; }
+    .cta a { background:#1f3b1f; color:white; padding:15px 25px; border-radius:8px; text-decoration:none; font-size:18px; }
+    footer { text-align:center; padding:20px; color:#666; }
+    @media(max-width:600px){
+      header h1 { font-size:22px; }
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>ЛесГЛОНАСС</h1>
-    <p>Сайт успешно работает через GitHub Pages.</p>
-    <p>Домен: лесглонасс.рф</p>
+
+<header>
+  <h1>ЛесГЛОНАСС — контроль манипуляторов и вывозки леса</h1>
+  <p>Точное отслеживание, контроль маршрутов, безопасность и прозрачность</p>
+</header>
+
+<div class="section">
+  <h2>Что такое ЛесГЛОНАСС?</h2>
+  <p>
+    ЛесГЛОНАСС — это система мониторинга манипуляторов, лесовозов и спецтехники,
+    которая позволяет контролировать перемещение, работу стрелы, время загрузки,
+    маршруты и фактические точки погрузки/выгрузки.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Возможности системы</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>📍 Точное местоположение</h3>
+      <p>Отслеживание техники в реальном времени с точностью до нескольких метров.</p>
+    </div>
+    <div class="feature">
+      <h3>🪵 Контроль работы манипулятора</h3>
+      <p>Фиксация подъёма стрелы, времени работы, циклов погрузки.</p>
+    </div>
+    <div class="feature">
+      <h3>🛣 Маршруты и точки</h3>
+      <p>Автоматическая запись маршрутов, стоянок, погрузок и выгрузок.</p>
+    </div>
+    <div class="feature">
+      <h3>📦 Отчёты</h3>
+      <p>Готовые отчёты для бухгалтерии, логистов и руководителей.</p>
+    </div>
   </div>
+</div>
+
+<div class="section">
+  <h2>Для кого подходит</h2>
+  <ul>
+    <li>Лесозаготовительные компании</li>
+    <li>Перевозчики круглого леса</li>
+    <li>Арендаторы манипуляторов</li>
+    <li>Собственники техники</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Как это работает</h2>
+  <p>
+    На манипулятор устанавливается терминал АСН и датчик положения стрелы.
+    Данные передаются на сервер, где формируются отчёты и визуализация.
+  </p>
+</div>
+
+<div class="section cta">
+  <h2>Получить консультацию</h2>
+  <p>Напишите нам, чтобы подключить технику или получить демонстрацию.</p>
+  <a href="mailto:info@лесглонасс.рф">Связаться</a>
+</div>
+
+<footer>
+  © ЛесГЛОНАСС, 2026  
+</footer>
+
 </body>
 </html>
