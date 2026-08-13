@@ -81,6 +81,50 @@
   <p>Напишите нам, чтобы подключить технику или получить демонстрацию.</p>
   <a href="mailto:info@лесглонасс.рф">Связаться</a>
 </div>
+<div class="section">
+  <h2>Оставить заявку</h2>
+  <p>Заполните форму — сообщение уйдёт напрямую в WhatsApp или Telegram.</p>
+
+  <form id="contactForm" onsubmit="sendMessage(event)">
+    <label>Ваше имя</label><br>
+    <input type="text" id="name" required style="width:100%; padding:10px; margin:10px 0;">
+
+    <label>Телефон</label><br>
+    <input type="text" id="phone" required style="width:100%; padding:10px; margin:10px 0;">
+
+    <label>Комментарий</label><br>
+    <textarea id="message" required style="width:100%; padding:10px; margin:10px 0; height:120px;"></textarea>
+
+    <div style="margin-top:20px;">
+      <button type="submit" style="padding:12px 20px; background:#1f3b1f; color:white; border:none; border-radius:6px; font-size:16px;">
+        Отправить
+      </button>
+    </div>
+  </form>
+
+  <script>
+    function sendMessage(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      const text = encodeURIComponent(
+        `Заявка с сайта ЛесГЛОНАСС:\n\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`
+      );
+
+      // WhatsApp
+      const whatsappUrl = `https://wa.me/79990834322?text=${text}`;
+
+      // Telegram (через tg://)
+      const telegramUrl = `tg://resolve?phone=79990834322&text=${text}`;
+
+      // Открываем WhatsApp по умолчанию
+      window.location.href = whatsappUrl;
+    }
+  </script>
+</div>
 
 <footer>
   © ЛесГЛОНАСС, 2026  
