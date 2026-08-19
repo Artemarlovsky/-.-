@@ -2,25 +2,61 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Контакты — ЛесГЛОНАСС</title>
+  <title>Контакты</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#f5f5f5; }
+    nav { background:#1f3b1f; padding:15px; }
+    nav a { color:white; margin-right:25px; text-decoration:none; font-size:16px; }
+    .container { max-width:900px; margin:auto; padding:20px; }
+    .section { background:white; padding:30px; border-radius:10px; margin-top:30px; }
+    input, textarea { width:100%; padding:10px; margin-top:10px; border-radius:6px; border:1px solid #ccc; }
+    .btn { padding:12px 20px; background:#4CAF50; color:white; border:none; border-radius:6px; margin-top:15px; }
+  </style>
 </head>
 <body>
 
-<nav style="background:#1f3b1f; padding:15px;">
-  <div style="max-width:900px; margin:auto; display:flex; gap:25px;">
-    <a href="company.html" style="color:white; text-decoration:none;">О компании</a>
-    <a href="services.html" style="color:white; text-decoration:none;">Услуги</a>
-    <a href="contacts.html" style="color:white; text-decoration:none;">Контакты</a>
-    <a href="request.html" style="color:white; text-decoration:none;">Оставить заявку</a>
-  </div>
+<nav>
+  <a href="company.html">О компании</a>
+  <a href="services.html">Услуги</a>
+  <a href="advantages.html">Преимущества</a>
+  <a href="contacts.html">Контакты</a>
 </nav>
 
-<div class="section" style="max-width:900px; margin:40px auto; background:white; padding:30px; border-radius:10px;">
-  <h1>Контакты</h1>
-  <p>Телефон: <strong>+7 999 083 43 22</strong></p>
-  <p>Email: info@лесглонасс.рф</p>
-  <p>WhatsApp: +7 999 083 43 22</p>
+<div class="container">
+  <div class="section">
+    <h1>Обратная связь</h1>
+    <p>Оставьте заявку, указав Ваше имя и контактные данные. Мы свяжемся с вами в кратчайшие сроки.</p>
+
+    <form onsubmit="sendMessage(event)">
+      <label>Имя</label>
+      <input type="text" id="name" required>
+
+      <label>Телефон</label>
+      <input type="text" id="phone" required>
+
+      <label>Комментарий</label>
+      <textarea id="message" required></textarea>
+
+      <button class="btn" type="submit">Отправить заявку</button>
+    </form>
+
+    <script>
+      function sendMessage(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const message = document.getElementById('message').value;
+
+        const text = encodeURIComponent(
+          `Заявка с сайта:\nИмя: ${name}\nТелефон: ${phone}\nКомментарий: ${message}`
+        );
+
+        window.location.href = `https://wa.me/79990834322?text=${text}`;
+      }
+    </script>
+
+  </div>
 </div>
 
 </body>
