@@ -18,18 +18,35 @@
     }
 
     /* Параллакс */
-    .parallax {
-        background-image: url('https://images.unsplash.com/photo-1581091870622-1e7a8c5e0f5b');
-        height: 80vh;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-    }
+.parallax {
+    background-image: url('img/trucks.jpg'); /* ← твой файл */
+    height: 85vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+    position: relative;
+}
+
+.parallax::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.parallax > div {
+    position: relative;
+    z-index: 2;
+}
+
 
     .parallax h1 {
         font-size: 48px;
