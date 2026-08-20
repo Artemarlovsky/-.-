@@ -17,86 +17,98 @@
         overflow-x: hidden;
     }
 
-    /* HERO BLOCK */
-    header.hero {
-        height: 90vh;
-        background-image: url('img/hero-bg.jpg'); /* ← твоё фото */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-        color: white;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* затемнение */
-    header.hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.45);
-        z-index: 1;
-    }
-
-    /* меню */
-    .topnav {
-        position: relative;
-        z-index: 2;
+    /* ФИКСИРОВАННАЯ ВЕРХНЯЯ ПАНЕЛЬ */
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         display: flex;
         justify-content: space-between;
-        padding: 20px 40px;
-        font-size: 18px;
         align-items: center;
+        padding: 10px 40px;
+        z-index: 1000;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 30px;
     }
 
     .logo {
-        font-weight: bold;
-        font-size: 26px;
-        letter-spacing: 1px;
+        height: 40px;
     }
 
     .topnav ul {
         list-style: none;
         display: flex;
-        gap: 30px;
+        gap: 25px;
         margin: 0;
         padding: 0;
     }
 
     .topnav a {
-        color: white;
+        color: #222;
         text-decoration: none;
+        font-weight: 500;
         transition: 0.3s;
     }
 
     .topnav a:hover {
-        opacity: 0.7;
+        color: #4CAF50;
     }
 
-    /* текст */
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        margin-top: auto;
-        margin-bottom: 120px;
+    /* ИКОНКИ и телефон */
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .icon {
+        width: 22px;   /* уменьшенные иконки */
+        height: 22px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+    }
+
+    .icon.whatsapp {
+        background-image: url('img/whatsapp.png');
+    }
+
+    .icon.telegram {
+        background-image: url('img/max.png');
+    }
+
+    .phone {
+        font-weight: bold;
+        color: #222;
+        font-size: 18px;
+    }
+
+    /* СВЕТЛЫЙ БЛОК С ТЕКСТОМ */
+    .hero-text {
+        background: #f5f7fa;
         text-align: center;
-        padding: 0 20px;
+        padding: 140px 20px 60px; /* отступ сверху из-за фиксированной панели */
     }
 
-    .hero-content h1 {
-        font-size: 48px;
+    .hero-text h1 {
+        font-size: 42px;
         margin-bottom: 20px;
     }
 
-    .hero-content p {
+    .hero-text p {
         font-size: 20px;
         max-width: 700px;
         margin: auto;
         margin-bottom: 30px;
     }
 
-    /* кнопка */
     .hero-btn {
         display: inline-block;
         padding: 14px 32px;
@@ -110,6 +122,15 @@
 
     .hero-btn:hover {
         background: #3e8e41;
+    }
+
+    /* ФОТО ТЕХНИКИ */
+    .hero-image {
+        height: 70vh;
+        background-image: url('img/hero-bg.jpg'); /* твоя фотография техники */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     /* секции */
@@ -217,24 +238,36 @@
 
 <body>
 
-<!-- HERO -->
-<header class="hero">
-    <nav class="topnav">
-        <div class="logo">ALT</div>
-        <ul>
-            <li><a href="#company">О компании</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#advantages">Преимущества</a></li>
-            <li><a href="#contacts">Контакты</a></li>
-        </ul>
-    </nav>
+<!-- ФИКСИРОВАННАЯ ШАПКА -->
+<header class="fixed-header">
+    <div class="header-left">
+        <img src="img/logo.jpg" alt="ALT" class="logo">
+        <nav class="topnav">
+            <ul>
+                <li><a href="#company">О компании</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <div class="hero-content" data-aos="fade-up">
-        <h1>ЭРА ГЛОНАСС для опасных грузов и пилмата</h1>
-        <p>Установка аппаратуры спутниковой навигации (АСН) для перевозки опасных грузов и древесины по постановлениям №2216 и №1378</p>
-        <a href="#form" class="hero-btn">Заказать</a>
+    <div class="header-right">
+        <a href="https://wa.me/79999999999" class="icon whatsapp"></a>
+        <a href="https://t.me/Max" class="icon telegram"></a>
+        <span class="phone">+7 999 999‑99‑99</span>
     </div>
 </header>
+
+<!-- СВЕТЛЫЙ БЛОК С ТЕКСТОМ -->
+<section class="hero-text" data-aos="fade-up">
+    <h1>ЭРА ГЛОНАСС для опасных грузов и пилмата</h1>
+    <p>Установка аппаратуры спутниковой навигации (АСН) для перевозки опасных грузов и древесины по постановлениям №2216 и №1378</p>
+    <a href="#form" class="hero-btn">Заказать</a>
+</section>
+
+<!-- ФОТО ТЕХНИКИ -->
+<section class="hero-image" data-aos="fade-up"></section>
 
 <!-- УСЛУГИ -->
 <section id="services" data-aos="fade-up">
