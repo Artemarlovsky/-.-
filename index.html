@@ -42,6 +42,70 @@
     .logo {
         height: 40px;
     }
+/* === БУРГЕР-МЕНЮ === */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.burger span {
+  width: 28px;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* === МОБИЛЬНОЕ МЕНЮ === */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 30px 20px;
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin: 15px 0;
+}
+
+.mobile-menu a {
+  color: #222;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mobile-phone {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+  .topnav {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
 
     .topnav ul {
         list-style: none;
@@ -390,6 +454,11 @@ document.getElementById('contactForm').addEventListener('submit', async function
     }
 });
 </script>
-
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+}
+</script>
 </body>
 </html>
