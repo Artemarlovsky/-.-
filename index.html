@@ -245,6 +245,14 @@
 <header class="fixed-header">
     <div class="header-left">
         <img src="img/LOGO.png" alt="" class="logo">
+            </div>
+     <!-- Бургер-иконка -->
+    <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+        <!-- Десктоп-меню -->
         <nav class="topnav">
             <ul>
 <li><a href="#top" style="font-weight:bold;">О компании</a></li>
@@ -262,7 +270,20 @@
         <span class="phone">+7 999 083‑4322</span>
     </div>
 </header>
+    
+<!-- Мобильное меню -->
+<div id="mobileMenu" class="mobile-menu">
+    <ul>
+        <li><a href="#top" onclick="toggleMenu()">О компании</a></li>
+        <li><a href="#services" onclick="toggleMenu()">Услуги</a></li>
+        <li><a href="#advantages" onclick="toggleMenu()">Преимущества</a></li>
+        <li><a href="#contacts" onclick="toggleMenu()">Контакты</a></li>
+    </ul>
 
+    <div class="mobile-phone">
+        <a href="tel:+79990834322">+7 999 083‑4322</a>
+    </div>
+</div>
 <!-- СВЕТЛЫЙ БЛОК С ТЕКСТОМ -->
 <section class="hero-text" data-aos="fade-up">
     <h1>ЭРА ГЛОНАСС для опасных грузов и пилмата</h1>
