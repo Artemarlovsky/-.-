@@ -389,12 +389,22 @@
         <div class="card" data-aos="zoom-in" data-aos-delay="150">
             <img src="img/fuel.jpeg" alt="Опасные грузы">
             <h3>АСН для перевозки опасных грузов</h3>
+            <div class="service-description">
+Установка АСН для перевозки опасных грузов согласно
+Постановлению Правительства РФ №2216.
+Подключение, настройка и регистрация под ключ.
+</div>
             <p>Оборудование, монтаж и регистрация</p>
             <strong>от 33 500 ₽</strong>
         </div>
         <div class="card" data-aos="zoom-in" data-aos-delay="300">
             <img src="img/PAZ.jpg" alt="Пассажиры">
             <h3>АСН для перевозки пассажиров</h3>
+            <div class="service-description">
+Установка АСН для перевозки пассажиров согласно
+Постановлению Правительства РФ №2216.
+Подключение, настройка и регистрация под ключ.
+</div>
             <p>Оборудование, монтаж и регистрация</p>
             <strong>от 33 500 ₽</strong>
         </div>
@@ -477,6 +487,29 @@ function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('open');
 }
+</script>
+    <script>
+document.querySelectorAll('.card').forEach(card => {
+
+    card.addEventListener('click', () => {
+
+        document.querySelectorAll('.service-description')
+        .forEach(desc => {
+
+            if (desc !== card.querySelector('.service-description')) {
+                desc.classList.remove('active');
+            }
+
+        });
+
+        const description =
+            card.querySelector('.service-description');
+
+        description.classList.toggle('active');
+
+    });
+
+});
 </script>
 </body>
 </html>
