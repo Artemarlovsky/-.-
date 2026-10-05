@@ -93,8 +93,6 @@
 }
 
 
-}
-
 .mobile-menu.open {
   right: 0;
 }
@@ -123,15 +121,15 @@
 @media (max-width: 768px) {
 
     .header-right {
-        display: none;
+        display: none !important;
     }
 
     .topnav {
-        display: none;
+        display: none !important;
     }
 
     .burger {
-        display: flex;
+        display: flex !important;
     }
 
     .fixed-header {
@@ -409,7 +407,7 @@
 .max-btn {
     background: #4CAF50;
 }
-``
+
 </style>
 </head>
 
@@ -431,16 +429,14 @@
     <!-- МОБИЛЬНОЕ МЕНЮ -->
 <div id="mobileMenu" class="mobile-menu">
 
-    <div class="mobile-menu-header">
-        <imgLOGO.png
-    </div>
+<div class="mobile-menu-header">
+    <img src="img/LOGO.png" alt="Л
 
-    <ul>
-        <li><a href="#top" onclick=
-        <li><a href="#services></li>
-        <li><advantagesПреимущества</a></li>
-        <li>#contactsКонтакты</a></li>
-    </ul>
+<ul>
+    <li><a href="#top" onclick="toggleMenu()">О компании/a></li>
+    <li><advantagesПреимущества</a></li>
+    <li><contactsКонтакты</a></li>
+</ul>
 
     <div class="mobile-contacts">
 
