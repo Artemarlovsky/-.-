@@ -121,12 +121,27 @@
 
 /* === АДАПТИВНОСТЬ === */
 @media (max-width: 768px) {
-  .topnav {
-    display: none;
-  }
-  .burger {
-    display: flex;
-  }
+
+    .header-right {
+        display: none;
+    }
+
+    .topnav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .fixed-header {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
 }
 
     .topnav ul {
@@ -321,6 +336,80 @@
         margin-top: 40px;
         box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
     }
+    /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 280px;
+    height: 100%;
+    background: white;
+    box-shadow: -3px 0 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    z-index: 2000;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mobile-logo {
+    height: 45px;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    margin-bottom: 20px;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #222;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mobile-contacts {
+    margin-top: 40px;
+}
+
+.mobile-phone {
+    display: block;
+    margin-bottom: 20px;
+    color: #222;
+    font-weight: bold;
+}
+
+.mobile-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    color: white !important;
+    margin-bottom: 10px;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+}
+
+.max-btn {
+    background: #4CAF50;
+}
+``
 </style>
 </head>
 
@@ -339,6 +428,38 @@
         <span></span>
         <span></span>
     </div>
+    <!-- МОБИЛЬНОЕ МЕНЮ -->
+<div id="mobileMenu" class="mobile-menu">
+
+    <div class="mobile-menu-header">
+        <imgLOGO.png
+    </div>
+
+    <ul>
+        <li><a href="#top" onclick=
+        <li><a href="#services></li>
+        <li><advantagesПреимущества</a></li>
+        <li>#contactsКонтакты</a></li>
+    </ul>
+
+    <div class="mobile-contacts">
+
+        tel:+79990834322
+            📞 +7 999 083-43-22
+        </a>
+
+        <a href="https://wa.me/79990834322" class="mobile-btn whatsapp-btn">
+            WhatsApp
+        </a>
+
+        <a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4"
+           class="mobile-btn max-btn">
+            MAX
+        </a>
+
+    </div>
+
+</div>
         <!-- Десктоп-меню -->
         <nav class="topnav">
             <ul>
