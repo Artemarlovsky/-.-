@@ -244,13 +244,28 @@
             margin-right: 20px;
         }
 
-        .burger span {
-            width: 28px;
-            height: 3px;
-            background: #222;
-            border-radius: 2px;
-            transition: 0.3s;
-        }
+.burger span {
+    width: 28px;
+    height: 3px;
+    background: #222;
+    border-radius: 2px;
+    transition: 0.3s;
+    display: block;
+}
+
+/* Верхняя и нижняя полоски уходят в крестик */
+.burger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 0;
+}
+.burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+/* Средняя полоска исчезает */
+.burger.open span:nth-child(2) {
+    opacity: 0;
+}
+
 
         /* === МОБИЛЬНОЕ МЕНЮ === */
         .mobile-menu {
@@ -1004,9 +1019,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
     const mobileMenu = document.getElementById('mobileMenu');
 
-    burger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-    });
+burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open');
+});
 
     // Закрытие по клику на крестик (уже есть onclick, можно тоже перевести на JS, если хочешь)
     document.querySelector('.mobile-close').addEventListener('click', () => {
