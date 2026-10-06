@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="yandex-verification" content="9e232c31dbcf29b2" />
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113297716', 'ym');
+
+        ym(113297716, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/113297716" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГЛОНАСС ЛЕС — Установка АСН для перевозки древесины | Хабаровск</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+    <style>
+        /* === ГЛОБАЛЬНЫЕ СБРОСЫ === */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding-top: 70px;
+            font-family: Inter, sans-serif;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        /* === ФИКСИРОВАННАЯ ВЕРХНЯЯ ПАНЕЛЬ === */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        /* === ДЕСКТОП-МЕНЮ === */
+        .topnav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .topnav a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .topnav a:hover {
+            color: #4CAF50;
+        }
+
+        /* === ИКОНКИ И ТЕЛЕФОН === */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 60px;
+        }
+
+        .icon {
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .phone {
+            font-weight: bold;
+            color: #222;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        /* === БУРГЕР-МЕНЮ === */
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .burger span {
+            width: 28px;
+            height: 3px;
+            background: #222;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* === МОБИЛЬНОЕ МЕНЮ === */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: #ffffff;
+            z-index: 9999;
+            transition: 0.3s ease;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-menu ul li {
+            margin: 15px 0;
+        }
+
+        .mobile-menu a {
+            color: #222;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .mobile-close {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: right;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .mobile-phone {
+            margin-top: 30px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .mobile-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 8px;
+            color: white !important;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .max-btn {
+            background: #4CAF50;
+        }
+
+        /* === АДАПТИВНОСТЬ === */
+        @media (max-width: 768px) {
+            .header-right {
+                display: none !important;
+            }
+
+            .topnav {
+                display: none !important;
+            }
+
+            .burger {
+                display: flex !important;
+            }
+
+            .fixed-header {
+                padding: 12px 20px;
+            }
+
+            .logo {
+                height: 35px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+        }
+
+        /* === HERO-БЛОК === */
+        .hero-text {
+            background: #f5f7fa;
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 6px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #3e8e41;
+        }
+
+        .hero-image {
+            height: 70vh;
+            background-image: url('img/hero-mobile.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* === СЕКЦИИ === */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* === КАРТОЧКИ === */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #f5f7fa;
+            border-left: 4px solid #4CAF50;
+            border-radius: 6px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .service-description.active {
+            display: block;
+        }
+
+        /* === ПРЕИМУЩЕСТВА === */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .adv {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .adv:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        /* === ФОРМА === */
+        form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            color: #222;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3e8e41;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* === ФУТЕР === */
+        footer {
+            background: #ffffff;
+            color: #555;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="top"></div>
+
+<!-- ФИКСИРОВАННАЯ ШАПКА -->
+<header class="fixed-header">
+    <div class="header-left">
+        <img src="img/LOGO.png" alt="ГЛОНАСС ЛЕС" class="logo">
+    </div>
+
+    <!-- Бургер-иконка -->
+    <div class="burger" onclick="toggleMenu()" role="button" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Десктоп-меню -->
+    <nav class="topnav">
+        <ul>
+            <li><a href="#top" style="font-weight:bold;">О компании</a></li>
+            <li><a href="#services" style="font-weight:bold;">Услуги</a></li>
+            <li><a href="#advantages" style="font-weight:bold;">Преимущества</a></li>
+            <li><a href="#contacts" style="font-weight:bold;">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-right">
+        <a href="https://wa.me/79990834322" class="icon" aria-label="WhatsApp">
+            <img src="img/whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4" class="icon" aria-label="MAX">
+            <img src="img/max.png" alt="MAX">
+        </a>
+        <a href="tel:+79990834322" class="phone">+7 999 083-43-22</a>
+    </div>
+</header>
+
+<!-- МОБИЛЬНОЕ МЕНЮ -->
+<div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-close" onclick="toggleMenu()" role="button" aria-label="Закрыть меню">✕</div>
+
+    <ul class="mobile-nav">
+        <li><a href="#top">О компании</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#advantages">Преимущества</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+
+    <div class="mobile-contacts">
+        <a href="tel:+79990834322" class="mobile-phone">+7 999 083-43-22</a>
+
+        <a href="https://wa.me/79990834322" class="mobile-btn whatsapp-btn">
+            <img src="img/whatsapp.png" alt="WhatsApp" style="width:24px;height:24px;margin-right:8px;">
+            WhatsApp
+        </a>
+
+        <a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4" class="mobile-btn max-btn">
+            <img src="img/max.png" alt="MAX" style="width:24px;height:24px;margin-right:8px;">
+            MAX
+        </a>
+    </div>
+</div>
+
+<!-- СВЕТЛЫЙ БЛОК С ТЕКСТОМ -->
+<section class="hero-text" data-aos="fade-up">
+    <h1>АСН для перевозки древесины и опасных грузов в Хабаровске</h1>
+    <p>Установка аппаратуры спутниковой навигации (АСН) для перевозки древесины, опасных грузов и пассажиров по постановлениям №1378 и №2216</p>
+    <a href="#form" class="hero-btn">Заказать</a>
+</section>
+
+<!-- ФОТО ТЕХНИКИ -->
+<section class="hero-image" data-aos="fade-up"></section>
+
+<!-- УСЛУГИ -->
+<section id="services" data-aos="fade-up">
+    <h2>Наши услуги</h2>
+    <div class="cards">
+        <div class="card" data-aos="zoom-in">
+            <img src="img/timbertruck.jpeg" alt="АСН для перевозки древесины">
+            <h3>АСН для перевозки древесины</h3>
+            <div class="service-description">
+                <ul>
+                    <li>АСН для перевозки древесины в соответствии с требованиями постановления правительства №1378</li>
+                    <li>Подключение от прикуривателя или монтаж</li>
+                    <li>Сим-карта у агента АО ГЛОНАСС</li>
+                </ul>
+            </div>
+            <p>Оборудование, монтаж и регистрация</p>
+            <strong>от 16 500 ₽</strong>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="150">
+            <img src="img/fuel.jpeg" alt="АСН для опасных грузов">
+            <h3>АСН для перевозки опасных грузов</h3>
+            <div class="service-description">
+                <ul>
+                    <li>АСН для перевозки опасных грузов в соответствии с требованиями постановления правительства №2216</li>
+                    <li>Требуется монтаж</li>
+                    <li>Встроенная сим-карта АО Глонасс</li>
+                </ul>
+            </div>
+            <p>Оборудование, монтаж и регистрация</p>
+            <strong>от 33 500 ₽</strong>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="300">
+            <img src="img/PAZ.jpg" alt="АСН для перевозки пассажиров">
+            <h3>АСН для перевозки пассажиров</h3>
+            <div class="service-description">
+                <ul>
+                    <li>АСН для перевозки пассажиров в соответствии с требованиями постановления правительства №2216</li>
+                    <li>Требуется монтаж</li>
+                    <li>Встроенная сим-карта АО Глонасс</li>
+                </ul>
+            </div>
+            <p>Оборудование, монтаж и регистрация</p>
+            <strong>от 33 500 ₽</strong>
+        </div>
+    </div>
+</section>
+
+<!-- ПРЕИМУЩЕСТВА -->
+<section id="advantages" data-aos="fade-up">
+    <h2>Преимущества</h2>
+    <div class="advantages">
+        <div class="adv" data-aos="flip-left">Выгодные цены</div>
+        <div class="adv" data-aos="flip-left" data-aos-delay="150">Гарантия на оборудование</div>
+        <div class="adv" data-aos="flip-left" data-aos-delay="300">Регистрация от 3 дней</div>
+        <div class="adv" data-aos="flip-left" data-aos-delay="450">Оперативная установка</div>
+    </div>
+</section>
+
+<!-- ФОРМА -->
+<section id="form" data-aos="fade-up">
+    <h2>Оставить заявку</h2>
+    <form id="contactForm" action="https://formspree.io/f/xgawdevz" method="POST">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <textarea name="message" placeholder="Комментарий"></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+    <div id="successMessage" style="display:none; margin-top:20px; padding:15px; background:#4CAF50; color:white; border-radius:6px; font-size:18px; text-align:center;">
+        Заявка успешно отправлена!
+    </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<footer id="contacts" data-aos="fade-up">
+    <p>© ЛЕСГЛОНАСС.РФ — Установка АСН</p>
+    <p>Телефон: +7 (999) 083-43-22</p>
+</footer>
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 900,
+        once: true
+    });
+</script>
+
+<script>
+    // === МОБИЛЬНОЕ МЕНЮ ===
+    function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.remove('open');
+        });
+    });
+</script>
+
+<script>
+    // === КАРТОЧКИ УСЛУГ ===
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.service-description').forEach(desc => {
+                if (desc !== card.querySelector('.service-description')) {
+                    desc.classList.remove('active');
+                }
+            });
+            card.querySelector('.service-description').classList.toggle('active');
+        });
+    });
+</script>
+
+<script>
+    // === ОТПРАВКА ФОРМЫ ===
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const btn = form.querySelector('button');
+        const originalText = btn.innerText;
+
+        btn.disabled = true;
+        btn.innerText = 'Отправка...';
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('https://formspree.io/f/xgawdevz', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                document.getElementById('successMessage').style.display = 'block';
+                form.reset();
+            } else {
+                alert('Ошибка отправки. Попробуйте позже.');
+            }
+        } catch (err) {
+            alert('Нет соединения. Проверьте интернет.');
+        } finally {
+            btn.disabled = false;
+            btn.innerText = originalText;
+        }
+    });
+</script>
+
+</body>
+</html>
