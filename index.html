@@ -27,13 +27,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 
 <!-- AOS CSS -->
-    .mobile-close {
-font-size: 32px;
-font-weight: bold;
-text-align: right;
-cursor: pointer;
-margin-bottom: 20px;
-}
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 
 <style>
@@ -369,10 +363,6 @@ font-weight: 700;
     right: 0;
 }
 
-.mobile-menu.open {
-    right: 0;
-}
-
 .mobile-menu-header {
     text-align: center;
     margin-bottom: 30px;
@@ -463,22 +453,33 @@ font-weight: 700;
 <li><a href="#contacts">Контакты</a></li>
     </ul>
 
+<div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-close" onclick="toggleMenu()">✕</div>
+
+    <ul class="mobile-nav">
+        <li><a href="#top">О компании</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#advantages">Преимущества</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+
     <div class="mobile-contacts">
+        <a href="tel:+79990834322" class="mobile-phone">+7 999 083‑4322</a>
 
-        <a href="tel:+79990834322" class="mobile +79990834322
-        </a>
-
-        <a href="https://wa.me/79990834322"
-           class="mobile-btn whatsapp-btn">
+        <a href="https://wa.me/79990834322" class="mobile-btn whatsapp-btn">
+            <svg style="width:20px;height:20px;vertical-align:middle;margin-right:8px;" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.703-.831-2.01-.93c-.308-.1-.52-.166-.734.166s-.617.977-.749 1.183c-.133.207-.416.554-.148.852s1.035.65 1.225.817c.19.167.333.29.487.14c.154-.15.467-.578.598-.744c.133-.167.296-.333.179-.663c-.058-.167-.353-.925-.408-1.091zm3.511-7.365c-2.333-3.925-6.175-6.884-10.863-6.884C4.955 2.833 2 5.966 2 9.667c0 1.3.325 2.574.935 3.767l-1.908 6.754L3.08 21.8c.427.114 1.277.136 1.826.136c2.555 0 4.817-1.584 5.604-1.982l.962-2.281c.53-.078 1.691-.256 1.764-.271.71-.097 1.163-.175 1.687.432.524.608 1.645 1.961 2.061 2.425.589.657 1.336.81 1.449.83.177.034.39.026.588-.141.199-.168.658-.62.815-.9c.157-.28.315-.603.216-.885-.098-.283-1.182-3.055-1.34-3.502zm-10.9 6.992c-1.744 0-3.162-1.448-3.162-3.23c0-1.782 1.419-3.23 3.162-3.23s3.162 1.448 3.162 3.23c0 1.781-1.418 3.23-3.162 3.23z"/>
+            </svg>
             WhatsApp
         </a>
 
-        <a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4"
-           class="mobile-btn max-btn">
+        <a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4" class="mobile-btn max-btn">
+            <img src="img/max.png" alt="MAX" style="width:24px;height:24px;margin-right:8px;">
             MAX
         </a>
-
     </div>
+</div>
+
 
 </div>
         <!-- Десктоп-меню -->
@@ -572,7 +573,7 @@ font-weight: 700;
 <!-- ФОРМА -->
 <section id="form" data-aos="fade-up">
     <h2>Оставить заявку</h2>
-<form action="https://formspree.io/f/xgawdevz" method="POST">
+<form id="contactForm" action="https://formspree.io/f/xgawdevz" method="POST">
     <input type="text" name="name" placeholder="Ваше имя" required>
     <input type="tel" name="phone" placeholder="Телефон" required>
     <textarea name="message" placeholder="Комментарий"></textarea>
