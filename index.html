@@ -164,6 +164,8 @@
             align-items: center;
             padding: 10px 40px;
             z-index: 1000;
+            border-bottom: 4px solid #4CAF50; /* акцентная полоса */
+
         }
 
         .header-left {
@@ -219,10 +221,18 @@
         }
 
         .phone {
-            font-weight: bold;
-            color: #222;
-            font-size: 18px;
-            text-decoration: none;
+        font-weight: bold;
+        color: #4CAF50;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 8px;
+        transition: background 0.3s;
+        }
+        
+        .phone:hover {
+        background: #e8f5e9;
+        color: #2e7d32;
         }
 
         /* === БУРГЕР-МЕНЮ === */
