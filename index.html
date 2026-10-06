@@ -235,14 +235,16 @@
         color: #2e7d32;
         }
 
-        /* === БУРГЕР-МЕНЮ === */
-        .burger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            margin-right: 20px;
-        }
+/* === БУРГЕР-МЕНЮ === */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+    z-index: 10001;
+    position: relative;
+}
 
 .burger span {
     width: 28px;
@@ -250,21 +252,20 @@
     background: #222;
     border-radius: 2px;
     transition: 0.3s;
-    display: block;
+    transform-origin: center;
 }
 
-/* Верхняя и нижняя полоски уходят в крестик */
+/* Анимация в крестик */
 .burger.open span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 0;
+    transform: translateY(8px) rotate(45deg);
 }
-.burger.open span:nth-child(3) {
-    transform: rotate(-45deg);
-}
-/* Средняя полоска исчезает */
 .burger.open span:nth-child(2) {
     opacity: 0;
 }
+.burger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 
 
         /* === МОБИЛЬНОЕ МЕНЮ === */
@@ -772,7 +773,7 @@
     </div>
 
     <!-- Бургер-иконка -->
-    <div class="burger" role="button" aria-label="Открыть меню">
+<div class="burger" id="burger" role="button" aria-label="Открыть меню">
         <span></span>
         <span></span>
         <span></span>
@@ -1015,27 +1016,32 @@
 
 <script>
     // === МОБИЛЬНОЕ МЕНЮ ===
-document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.querySelector('.burger');
-    const mobileMenu = document.getElementById('mobileMenu');
+ document.addEventListener('DOMContentLoaded', () => {
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.querySelector('.mobile-close');
 
-burger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    burger.classList.toggle('open');
-});
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            burger.classList.add('open');
+        }
 
-    // Закрытие по клику на крестик (уже есть onclick, можно тоже перевести на JS, если хочешь)
-    document.querySelector('.mobile-close').addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-    });
-
-    // Закрытие при клике по ссылке в мобильном меню
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', () => {
+        function closeMenu() {
             mobileMenu.classList.remove('open');
+            burger.classList.remove('open');
+        }
+
+        // Открытие по бургеру
+        burger.addEventListener('click', openMenu);
+
+        // Закрытие по крестику
+        closeBtn.addEventListener('click', closeMenu);
+
+        // Закрытие при клике на ссылку в меню
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
     });
-});
 
 </script>
 
