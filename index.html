@@ -757,7 +757,7 @@
     </div>
 
     <!-- Бургер-иконка -->
-    <div class="burger" onclick="toggleMenu()" role="button" aria-label="Открыть меню">
+    <div class="burger" role="button" aria-label="Открыть меню">
         <span></span>
         <span></span>
         <span></span>
@@ -1000,15 +1000,27 @@
 
 <script>
     // === МОБИЛЬНОЕ МЕНЮ ===
-    function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('open');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.burger');
+    const mobileMenu = document.getElementById('mobileMenu');
 
+    burger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+    });
+
+    // Закрытие по клику на крестик (уже есть onclick, можно тоже перевести на JS, если хочешь)
+    document.querySelector('.mobile-close').addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+    });
+
+    // Закрытие при клике по ссылке в мобильном меню
     document.querySelectorAll('.mobile-nav a').forEach(link => {
         link.addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.remove('open');
+            mobileMenu.classList.remove('open');
         });
     });
+});
+
 </script>
 
 <script>
