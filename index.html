@@ -22,6 +22,13 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 
 <!-- AOS CSS -->
+    .mobile-close {
+font-size: 32px;
+font-weight: bold;
+text-align: right;
+cursor: pointer;
+margin-bottom: 20px;
+}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 
 <style>
@@ -432,31 +439,34 @@
     </div>
     <!-- МОБИЛЬНОЕ МЕНЮ -->
 <div id="mobileMenu" class="mobile-menu">
-
+<div class="mobile-close" onclick="toggleMenu()">
+✕
+</div>
+ 
 <div class="mobile-menu-header">
-    <img src="img/LOGO.png" alt="Л
-
-<ul>
-    <li><a href="#top" onclick="toggleMenu()">О компании/a></li>
-    <li><advantagesПреимущества</a></li>
-    <li><contactsКонтакты</a></li>
+<img src="img/LOGO.png" alt="Логотип" classli>#topО компании</a></li>
+<li>#servicesУслуги</a></li>
+<li><a hrefagesПреимущества</a></li>
+<li>#contactsКонтакты</a></li>
 </ul>
-
-    <div class="mobile-contacts">
-
-            📞 +7 999 083-43-22
-        </a>
-
-        <a href="https://wa.me/79990834322" class="mobile-btn whatsapp-btn">
-            WhatsApp
-        </a>
-
-        <a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4"
-           class="mobile-btn max-btn">
-            MAX
-        </a>
-
-    </div>
+ 
+<div class="mobile-contacts">
+ 
+tel:+79990834322
+📞 +7 999 083‑43‑22
+</a>
+ 
+<a href="https://wa.me/79990834322"
+class="mobile-btn whatsapp-btn">
+WhatsApp
+</a>
+ 
+<a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4"
+class="mobile-btn max-btn">
+MAX
+</a>
+ 
+</div>
 
 </div>
         <!-- Десктоп-меню -->
