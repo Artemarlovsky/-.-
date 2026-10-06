@@ -19,7 +19,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ГЛОНАСС ЛЕС — Установка АСН для перевозки древесины | Хабаровск</title>
+    <meta name="description" content="Установка АСН для перевозки древесины, опасных грузов и пассажиров в Хабаровске. Регистрация от 3 дней. Гарантия на оборудование. Звоните: +7 999 083-43-22">
+    <link rel="canonical" href="https://лесглонасс.рф">
     <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ГЛОНАСС ЛЕС — Установка АСН в Хабаровске">
+    <meta property="og:description" content="Установка АСН для перевозки древесины, опасных грузов и пассажиров. Регистрация от 3 дней.">
+    <meta property="og:image" content="https://лесглонасс.рф/img/hero-bg.jpg">
+    <meta property="og:url" content="https://лесглонасс.рф">
+    <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +37,93 @@
 
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+    <!-- Микроразметка LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ГЛОНАСС ЛЕС",
+      "description": "Установка АСН для перевозки древесины, опасных грузов и пассажиров в Хабаровске",
+      "url": "https://лесглонасс.рф",
+      "telephone": "+79990834322",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Хабаровск",
+        "addressRegion": "Хабаровский край",
+        "addressCountry": "RU"
+      },
+      "areaServed": "Хабаровский край",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      "sameAs": [
+        "https://wa.me/79990834322",
+        "https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4"
+      ]
+    }
+    </script>
+
+    <!-- Микроразметка Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Установка АСН для перевозки древесины",
+      "provider": { "@type": "ProfessionalService", "name": "ГЛОНАСС ЛЕС" },
+      "areaServed": "Хабаровск",
+      "offers": {
+        "@type": "Offer",
+        "price": "16500",
+        "priceCurrency": "RUB"
+      }
+    }
+    </script>
+
+    <!-- Микроразметка FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает установка?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Монтаж оборудования — от 1 до 3 часов в зависимости от типа транспорта. Регистрация в системе ГЛОНАСС — от 3 рабочих дней."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие документы нужны?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для регистрации АСН потребуются: свидетельство о регистрации ТС, правоустанавливающие документы на транспорт. Полный список сообщим после заявки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Даёте ли вы гарантию на оборудование?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, гарантия на оборудование — от 12 месяцев. При неисправности в гарантийный срок — замена за наш счёт."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Выезжаете ли в другие города Хабаровского края?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, работаем по всему Хабаровскому краю. Стоимость выезда за пределы Хабаровска уточняйте по телефону."
+          }
+        }
+      ]
+    }
+    </script>
 
     <style>
         /* === ГЛОБАЛЬНЫЕ СБРОСЫ === */
@@ -49,6 +145,10 @@
 
         h1, h2, h3 {
             font-weight: 700;
+        }
+
+        a {
+            color: inherit;
         }
 
         /* === ФИКСИРОВАННАЯ ВЕРХНЯЯ ПАНЕЛЬ === */
@@ -237,6 +337,14 @@
             .hero-text p {
                 font-size: 16px;
             }
+
+            .hero-image {
+                height: 40vh;
+            }
+
+            .stat strong {
+                font-size: 26px;
+            }
         }
 
         /* === HERO-БЛОК === */
@@ -274,29 +382,59 @@
         }
 
         .hero-image {
-        height: 70vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        
-@media (min-width: 769px) {
-    .hero-image {
-        background-image: url('img/hero-bg.jpg');
-    }
-}
 
-/* Мобильные: компактная hero-mobile.jpeg */
-@media (max-width: 768px) {
-    .hero-image {
-        background-image: url('img/hero-mobile.jpeg');
-    }
-}
+        /* Десктоп: hero-bg.jpg */
+        @media (min-width: 769px) {
+            .hero-image {
+                background-image: url('img/hero-bg.jpg');
+            }
+        }
+
+        /* Мобильные: hero-mobile.jpeg */
+        @media (max-width: 768px) {
+            .hero-image {
+                background-image: url('img/hero-mobile.jpeg');
+            }
+        }
+
         /* === СЕКЦИИ === */
         section {
             padding: 60px 20px;
             max-width: 1100px;
             margin: auto;
+        }
+
+        /* === БЛОК СТАТИСТИКИ === */
+        .stats-section {
+            background: #4CAF50;
+            color: white;
+            max-width: 100%;
+            padding: 50px 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         /* === КАРТОЧКИ === */
@@ -342,6 +480,40 @@
             display: block;
         }
 
+        .service-description ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* === КАК МЫ РАБОТАЕМ === */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .step {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: #4CAF50;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
         /* === ПРЕИМУЩЕСТВА === */
         .advantages {
             display: grid;
@@ -361,6 +533,50 @@
         .adv:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        /* === FAQ === */
+        .faq-list {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 18px 22px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            position: relative;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 22px;
+            font-size: 22px;
+            color: #4CAF50;
+        }
+
+        .faq-item[open] summary::after {
+            content: '\2212';
+        }
+
+        .faq-item p {
+            padding: 0 22px 18px;
+            color: #555;
+            margin: 0;
         }
 
         /* === ФОРМА === */
@@ -385,6 +601,21 @@
             font-family: inherit;
         }
 
+        .consent-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .consent-label input {
+            width: auto;
+            margin: 0;
+        }
+
         button {
             width: 100%;
             padding: 14px;
@@ -406,14 +637,97 @@
             cursor: not-allowed;
         }
 
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 6px;
+            font-size: 18px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* === ФУТЕР === */
         footer {
             background: #ffffff;
             color: #555;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px 30px;
             margin-top: 40px;
             box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .footer-grid h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        .footer-grid p {
+            margin: 6px 0;
+        }
+
+        .footer-grid a {
+            text-decoration: none;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        .footer-grid a:hover {
+            color: #4CAF50;
+        }
+
+        .footer-copy {
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* === ПЛАВАЮЩАЯ КНОПКА ЗВОНКА === */
+        .floating-call {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: #4CAF50;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(76,175,80,0.5);
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-call svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 16px rgba(76,175,80,0.5); }
+            50% { box-shadow: 0 4px 28px rgba(76,175,80,0.8); }
+        }
+
+        @media (max-width: 768px) {
+            .floating-call {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -440,7 +754,8 @@
         <ul>
             <li><a href="#top" style="font-weight:bold;">О компании</a></li>
             <li><a href="#services" style="font-weight:bold;">Услуги</a></li>
-            <li><a href="#advantages" style="font-weight:bold;">Преимущества</a></li>
+            <li><a href="#process" style="font-weight:bold;">Как работаем</a></li>
+            <li><a href="#faq" style="font-weight:bold;">Вопросы</a></li>
             <li><a href="#contacts" style="font-weight:bold;">Контакты</a></li>
         </ul>
     </nav>
@@ -463,7 +778,8 @@
     <ul class="mobile-nav">
         <li><a href="#top">О компании</a></li>
         <li><a href="#services">Услуги</a></li>
-        <li><a href="#advantages">Преимущества</a></li>
+        <li><a href="#process">Как работаем</a></li>
+        <li><a href="#faq">Вопросы</a></li>
         <li><a href="#contacts">Контакты</a></li>
     </ul>
 
@@ -482,22 +798,32 @@
     </div>
 </div>
 
-<!-- СВЕТЛЫЙ БЛОК С ТЕКСТОМ -->
+<!-- HERO -->
 <section class="hero-text" data-aos="fade-up">
     <h1>АСН для перевозки древесины и опасных грузов в Хабаровске</h1>
-    <p>Установка аппаратуры спутниковой навигации (АСН) для перевозки древесины, опасных грузов и пассажиров по постановлениям №1378 и №2216</p>
+    <p>Установка аппаратуры спутниковой навигации (АСН) для перевозки древесины, опасных грузов и пассажиров по постановлениям №1378 и №2216. Регистрация от 3 дней, гарантия 12 месяцев.</p>
     <a href="#form" class="hero-btn">Заказать</a>
 </section>
 
 <!-- ФОТО ТЕХНИКИ -->
 <section class="hero-image" data-aos="fade-up"></section>
 
+<!-- СТАТИСТИКА -->
+<section class="stats-section" data-aos="fade-up">
+    <div class="stats-grid">
+        <div class="stat"><strong>500+</strong><span>установок АСН</span></div>
+        <div class="stat"><strong>от 3 дней</strong><span>регистрация</span></div>
+        <div class="stat"><strong>12 мес</strong><span>гарантия</span></div>
+        <div class="stat"><strong>весь ДФО</strong><span>зона выезда</span></div>
+    </div>
+</section>
+
 <!-- УСЛУГИ -->
 <section id="services" data-aos="fade-up">
     <h2>Наши услуги</h2>
     <div class="cards">
         <div class="card" data-aos="zoom-in">
-            <img src="img/timbertruck.jpeg" alt="АСН для перевозки древесины">
+            <img src="img/timbertruck.jpeg" alt="АСН для перевозки древесины" loading="lazy">
             <h3>АСН для перевозки древесины</h3>
             <div class="service-description">
                 <ul>
@@ -510,7 +836,7 @@
             <strong>от 16 500 ₽</strong>
         </div>
         <div class="card" data-aos="zoom-in" data-aos-delay="150">
-            <img src="img/fuel.jpeg" alt="АСН для опасных грузов">
+            <img src="img/fuel.jpeg" alt="АСН для опасных грузов" loading="lazy">
             <h3>АСН для перевозки опасных грузов</h3>
             <div class="service-description">
                 <ul>
@@ -523,7 +849,7 @@
             <strong>от 33 500 ₽</strong>
         </div>
         <div class="card" data-aos="zoom-in" data-aos-delay="300">
-            <img src="img/PAZ.jpg" alt="АСН для перевозки пассажиров">
+            <img src="img/PAZ.jpg" alt="АСН для перевозки пассажиров" loading="lazy">
             <h3>АСН для перевозки пассажиров</h3>
             <div class="service-description">
                 <ul>
@@ -534,6 +860,33 @@
             </div>
             <p>Оборудование, монтаж и регистрация</p>
             <strong>от 33 500 ₽</strong>
+        </div>
+    </div>
+</section>
+
+<!-- КАК МЫ РАБОТАЕМ -->
+<section id="process" data-aos="fade-up">
+    <h2>Как мы работаем</h2>
+    <div class="steps">
+        <div class="step" data-aos="fade-up">
+            <div class="step-number">1</div>
+            <h3>Заявка</h3>
+            <p>Оставляете заявку или звоните — консультируем бесплатно</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="100">
+            <div class="step-number">2</div>
+            <h3>Подбор оборудования</h3>
+            <p>Подбираем АСН под ваш транспорт и тип перевозок</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="200">
+            <div class="step-number">3</div>
+            <h3>Установка</h3>
+            <p>Монтаж оборудования на транспорт — от 1 часа</p>
+        </div>
+        <div class="step" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-number">4</div>
+            <h3>Регистрация</h3>
+            <p>Регистрируем в системе ГЛОНАСС — от 3 дней</p>
         </div>
     </div>
 </section>
@@ -549,6 +902,29 @@
     </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" data-aos="fade-up">
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+        <details class="faq-item">
+            <summary>Сколько времени занимает установка?</summary>
+            <p>Монтаж оборудования — от 1 до 3 часов в зависимости от типа транспорта. Регистрация в системе ГЛОНАСС — от 3 рабочих дней.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Какие документы нужны?</summary>
+            <p>Для регистрации АСН потребуются: свидетельство о регистрации ТС, правоустанавливающие документы на транспорт. Полный список сообщим после заявки.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Даёте ли вы гарантию на оборудование?</summary>
+            <p>Да, гарантия на оборудование — от 12 месяцев. При неисправности в гарантийный срок — замена за наш счёт.</p>
+        </details>
+        <details class="faq-item">
+            <summary>Выезжаете ли в другие города Хабаровского края?</summary>
+            <p>Да, работаем по всему Хабаровскому краю. Стоимость выезда за пределы Хабаровска уточняйте по телефону.</p>
+        </details>
+    </div>
+</section>
+
 <!-- ФОРМА -->
 <section id="form" data-aos="fade-up">
     <h2>Оставить заявку</h2>
@@ -556,18 +932,47 @@
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="tel" name="phone" placeholder="Телефон" required>
         <textarea name="message" placeholder="Комментарий"></textarea>
+        <label class="consent-label">
+            <input type="checkbox" required>
+            <span>Согласен на обработку персональных данных</span>
+        </label>
         <button type="submit">Отправить</button>
     </form>
-    <div id="successMessage" style="display:none; margin-top:20px; padding:15px; background:#4CAF50; color:white; border-radius:6px; font-size:18px; text-align:center;">
+    <div id="successMessage">
         Заявка успешно отправлена!
     </div>
 </section>
 
-<!-- КОНТАКТЫ -->
-<footer id="contacts" data-aos="fade-up">
-    <p>© ЛЕСГЛОНАСС.РФ — Установка АСН</p>
-    <p>Телефон: +7 (999) 083-43-22</p>
+<!-- КОНТАКТЫ / ФУТЕР -->
+<footer id="contacts">
+    <div class="footer-grid">
+        <div>
+            <h3>Контакты</h3>
+            <p><a href="tel:+79990834322">+7 999 083-43-22</a></p>
+            <p>Хабаровск, Хабаровский край</p>
+            <p>Пн–Сб: 9:00–20:00</p>
+        </div>
+        <div>
+            <h3>Мессенджеры</h3>
+            <p><a href="https://wa.me/79990834322">WhatsApp</a></p>
+            <p><a href="https://max.ru/u/f9LHodD0cOKMPzsYKVzr67H9dM31OlWQ3tstBBEHx3hPog8X8G2LfN0ymK4">MAX</a></p>
+        </div>
+        <div>
+            <h3>Услуги</h3>
+            <p><a href="#services">АСН для древесины</a></p>
+            <p><a href="#services">АСН для опасных грузов</a></p>
+            <p><a href="#services">АСН для пассажиров</a></p>
+        </div>
+    </div>
+    <p class="footer-copy">© 2026 ЛЕСГЛОНАСС.РФ — Установка АСН в Хабаровске</p>
 </footer>
+
+<!-- ПЛАВАЮЩАЯ КНОПКА ЗВОНКА -->
+<a href="tel:+79990834322" class="floating-call" aria-label="Позвонить">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+    </svg>
+</a>
 
 <!-- AOS JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
