@@ -627,6 +627,23 @@ function toggleMenu() {
     menu.classList.toggle('open');
 }
 </script>
+
+<script>
+document.querySelectorAll('.mobile-nav a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        document
+            .getElementById('mobileMenu')
+            .classList
+            .remove('open');
+
+    });
+
+});
+</script>
+
+    
     <script>
 document.querySelectorAll('.card').forEach(card => {
 
