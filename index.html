@@ -542,7 +542,57 @@
             margin-bottom: 15px;
         }
 
+/* === БЛОК АСН И ОБОРУДОВАНИЕ === */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
 
+.eq-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.eq-img-wrapper {
+    margin-bottom: 16px;
+}
+
+.eq-img-wrapper img {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+    display: block;
+    margin: 0 auto;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+}
+
+.features-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.features-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+
+        
         /* === FAQ === */
         .faq-list {
             max-width: 700px;
