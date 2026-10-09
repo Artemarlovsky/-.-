@@ -788,6 +788,76 @@
             }
         }
     </style>
+
+     <!-- Стили калькулятора -->
+    <style>
+    .price-calculator-block {
+      font-family: Inter, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .calc-subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .calc-section h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #222;
+    }
+    .options-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .option-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 12px;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .option-item:hover {
+      border-color: #4CAF50;
+      background: #f8fafc;
+    }
+    .option-item input[type="radio"],
+    .option-item input[type="checkbox"] {
+      margin-right: 12px;
+      width: 18px;
+      height: 18px;
+      accent-color: #4CAF50;
+    }
+    .label-text {
+      font-size: 15px;
+      color: #333;
+    }
+    .calc-result {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 2px solid #eee;
+      text-align: right;
+    }
+    .result-label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 4px;
+    }
+    .result-amount {
+      font-size: 22px;
+      font-weight: 800;
+      color: #222;
+    }
+    </style>
+    
 </head>
 
 <body>
@@ -922,6 +992,52 @@
             <strong>от 33 500 ₽</strong>
         </div>
     </div>
+
+<!-- КАЛЬКУЛЯТОР ЦЕНЫ АСН -->
+<div class="price-calculator-block" style="margin-top: 40px;">
+  <h3>Рассчитайте стоимость под вашу задачу</h3>
+  <p class="calc-subtitle">Выберите оборудование и нужные услуги — сумма посчитается автоматически</p>
+
+  <div class="calc-container">
+    <!-- Оборудование -->
+    <div class="calc-section">
+      <h4>Оборудование АСН</h4>
+      <div class="options-group">
+        <label class="option-item">
+          <input type="radio" name="equipment" value="16500" checked>
+          <span class="label-text">АСН (1378), кабель в прикуриватель — 16 500 ₽</span>
+        </label>
+        <label class="option-item">
+          <input type="radio" name="equipment" value="33500">
+          <span class="label-text">АСН (1378 + 2216) — 33 500 ₽</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Услуги -->
+    <div class="calc-section">
+      <h4>Дополнительные услуги</h4>
+      <div class="options-group">
+        <label class="option-item checkbox-label">
+          <input type="checkbox" name="service" value="3500" data-name="Монтаж АСН (выезд в Хабаровске)">
+          <span class="label-text">Монтаж АСН (включая выезд в черте г. Хабаровск) — 3 500 ₽</span>
+        </label>
+        <label class="option-item checkbox-label">
+          <input type="checkbox" name="service" value="3500" data-name="Сопровождение регистрации в ЛК АО «ГЛОНАСС»">
+          <span class="label-text">Сопровождение регистрации АСН в ЛК АО «ГЛОНАСС» — 3 500 ₽</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Итог -->
+    <div class="calc-result">
+      <div class="result-label">Итого к оплате:</div>
+      <div class="result-amount" id="total-price">16 500 ₽</div>
+    </div>
+  </div>
+</div>
+
+    
 </section>
 
 <!-- КАК МЫ РАБОТАЕМ -->
@@ -1147,5 +1263,34 @@
     });
 </script>
 
+    
+ <script>
+        function formatPrice(num) {
+          return new Intl.NumberFormat('ru-RU').format(num) + ' ₽';
+        }
+
+        function recalc() {
+          let total = 0;
+
+          const equipment = document.querySelector('input[name="equipment"]:checked');
+          if (equipment) {
+            total += parseInt(equipment.value, 10);
+          }
+
+          const services = document.querySelectorAll('input[name="service"]:checked');
+          services.forEach(cb => {
+            total += parseInt(cb.value, 10);
+          });
+
+          document.getElementById('total-price').textContent = formatPrice(total);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const inputs = document.querySelectorAll('input[name="equipment"], input[name="service"]');
+          inputs.forEach(inp => inp.addEventListener('change', recalc));
+          recalc();
+        });
+        </script>
+    
 </body>
 </html>
