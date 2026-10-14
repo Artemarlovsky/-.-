@@ -1406,10 +1406,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Плавный скролл к форме
-      const form = document.getElementById('orderForm');
-      if (form) {
-        form.scrollIntoView({ behavior: 'smooth' });
-      }
+     
+const formSection = document.getElementById('form');
+if (formSection) {
+  formSection.scrollIntoView({ behavior: 'smooth' });
+}
     });
   }
 
