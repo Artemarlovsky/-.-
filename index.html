@@ -1172,7 +1172,7 @@ width:      auto;
     <form id="contactForm" action="https://formspree.io/f/xgawdevz" method="POST">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="tel" name="phone" placeholder="Телефон" required>
-        <textarea name="message" placeholder="Комментарий"></textarea>
+        <textarea id="comment" name="message" placeholder="Комментарий"></textarea>
         <label class="consent-label">
             <input type="checkbox" required>
             <span>Согласен на обработку персональных данных</span>
@@ -1332,6 +1332,92 @@ width:      auto;
           inputs.forEach(inp => inp.addEventListener('change', recalc));
           recalc();
         });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const equipmentInputs = document.querySelectorAll('input[name="equipment"]');
+  const serviceCheckboxes = document.querySelectorAll('input[name="service"]');
+  const totalEl = document.getElementById('total-price');
+  const commentField = document.querySelector('#comment');
+  const orderBtn = document.querySelector('.hover-order-btn');
+
+  // Функция расчёта суммы
+  function calculateTotal() {
+    let total = 0;
+    let items = [];
+
+    // Оборудование (radio)
+    const selectedEquipment = Array.from(equipmentInputs).find(i => i.checked);
+    if (selectedEquipment) {
+      const label = selectedEquipment.closest('label').querySelector('.label-text').textContent;
+      total += parseInt(selectedEquipment.value, 10);
+      items.push(label);
+    }
+
+    // Услуги (checkboxes)
+    serviceCheckboxes.forEach(cb => {
+      if (cb.checked) {
+        const label = cb.closest('label').querySelector('.label-text').textContent;
+        total += parseInt(cb.value, 10);
+        items.push(label);
+      }
+    });
+
+    totalEl.textContent = new Intl.NumberFormat('ru-RU').format(total) + ' ₽';
+
+    // Сохраняем данные для автозаполнения
+    window.asnCalculatorData = {
+      items: items,
+      total: total
+    };
+  }
+
+  // Слушаем изменения
+  equipmentInputs.forEach(i => i.addEventListener('change', calculateTotal));
+  serviceCheckboxes.forEach(cb => cb.addEventListener('change', calculateTotal));
+
+  // Обработчик кнопки «Заказать»
+  if (orderBtn) {
+    orderBtn.addEventListener('click', (e) => {
+      e.preventDefault(); // отменяем обычный переход по ссылке
+
+      // Если данные не собраны — считаем ещё раз
+      if (!window.asnCalculatorData) calculateTotal();
+
+      const data = window.asnCalculatorData;
+
+      if (data.items.length === 0) {
+        alert('Пожалуйста, выберите оборудование и/или услуги.');
+        return;
+      }
+
+      // Формируем понятный комментарий
+      const commentText = [
+        'Комплект заказа:',
+        ...data.items.map((item, idx) => `${idx + 1}. ${item}`),
+        `Итого: ${new Intl.NumberFormat('ru-RU').format(data.total)} ₽`
+      ].join('\n');
+
+      // Заполняем поле
+      if (commentField) {
+        commentField.value = commentText;
+      } else {
+        // Если поля нет — выводим в консоль для проверки
+        console.log('Комментарий для заказа:', commentText);
+      }
+
+      // Плавный скролл к форме
+      const form = document.getElementById('orderForm');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Первый расчёт
+  calculateTotal();
+});
+
+     
         </script>
     
 </body>
